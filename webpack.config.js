@@ -1,11 +1,13 @@
-var webpack = require('webpack');
-var path = require('path');
+import webpack from 'webpack';
+import { resolve } from 'path';
 
-var DIST_DIR = path.resolve(__dirname, "dist");
-var SRC_DIR = path.resolve(__dirname, "src");
+var DIST_DIR = resolve(__dirname, "dist");
+var SRC_DIR = resolve(__dirname, "src");
 
 var config = {
+	mode: 'development',
 	devtool: 'source-map',
+	debug: true,
 	entry: SRC_DIR + "/app/index.js",
 	output: {
 		path: DIST_DIR + "/app",
@@ -26,7 +28,7 @@ var config = {
 	}
 };
 
-module.exports = config;
+export default config;
 
 /* Stuck at -d --devtool config
 module.exports = {
