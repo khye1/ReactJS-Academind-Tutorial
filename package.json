@@ -4,7 +4,9 @@
   "description": "I learn ReactJS on Academind Tutorials on Youtube :)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build",
+    "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline --hot",
+    "build:prod": "webpack -p && cp src/index.html dist/index.html"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,14 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "webpack": "^5.75.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^9.1.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1"
   }
 }
+
